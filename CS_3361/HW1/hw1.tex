@@ -1,0 +1,120 @@
+
+
+\documentclass[12pt, letterpaper]{article}
+
+\setlength{\topmargin}{-1.75cm} \setlength{\textheight}{22.5cm}
+\setlength{\oddsidemargin}{0.25cm}
+\setlength{\evensidemargin}{0.25cm} \setlength{\textwidth}{16.2cm}
+
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+\usepackage{palatino, url, multicol} % for multiple columns
+
+\usepackage{pictex}
+%% in the .pictex output of xfig, there is command \colo
+%% however the old version of pictex may not define this
+%% so we define color here as empty
+\def \color#1]#2{}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\newcommand{\hwnumber} {
+    1
+}
+
+\newcommand{\hwtitle} {
+  Introduction to programming languages. Regular expression. 
+}
+
+\newcommand{\duedate}{
+    11:59pm Mon Feb 08.
+}
+
+\date{}
+
+\begin{document}
+
+\newcommand{\hide}[1]{}
+\newcommand{\otherquestions}[1]{}
+\newcommand{\set}[1]{\{#1\}}
+\newcommand{\pg}[1]{{\tt #1}}
+\newtheorem{definition}{Definition}
+\newcommand{\emptyclause}{\Box}
+\newcommand{\keyword}[1]{{\bf #1}}
+
+\newcommand{\ee}[1] {
+  \begin{enumerate}
+    #1
+  \end{enumerate}
+}
+%% \noindent test \hfill test
+
+\newcommand{\ie}[1] {
+  \begin{enumerate}
+    #1
+  \end{enumerate}
+}
+
+\newcommand{\kleene}{\wedge}
+
+\title{{\bf Homework \hwnumber.} \hwtitle}
+
+\maketitle
+
+\input{hwHeader}
+
+
+%\thispagestyle{myheadings} \markright{\courseTitle\ by Y Zhang, TTU,
+% \courseDate}
+
+\fancyhf{}
+\thispagestyle{fancy}
+%
+\chead{\courseTitle\ by Y Zhang, TTU,\courseDate}
+% \thispagestyle{myheadings} \markright{\courseTitle\ by Y Zhang, TTU,\courseDate}
+\cfoot{\thepage}
+
+{\bf This homework will be due and collected on the class of
+ \duedate}
+
+\ee {
+
+% \item What content will be covered in this course? List at least three benefits of learning this course.
+\item You are encouraged to discuss with other people when you have doubts or problems. It is a great habit to acknowledge other people's contribution to your work (including homework and projects etc.)  List a) the name(s) of people who have contributed to your solution of this homework, and b) their contribution (briefly). If you worked by yourself, the answer of this question would be "N.A." Note the answer of this question is worth of 5\% of this homework.
+
+\item (5) Which one of the following is correct on the slides avail on our course website?
+  \ee{
+  	\item They themselves are sufficient for learning this course and doing projects, homework and exams.
+  	\item They covered only key topics and points. To learn more, one has to be present in the class because a lot of details and important ideas are learned through class discussions. Reading the textbook is another way to obtain more details of the topics discussed and is an important way to know other topics that may be interesting to you but not covered in the class.
+  }
+    
+\item (10) The {\em Turing Award} is regarded as ``Nobel Prize of Computing". List three Turing award winners whose election is largely related to their contribution to Programming Languages and their foundation. {\bf Each entry in your list should contain the programming language contribution (in a few sentences) of the corresponding winner}. You may start from the entry ``Turing Award" at Wiki and then google the relevant languages.
+
+\item (10) Explain what is {\em compilation} and what is {\em interpretation}.
+
+\item (15) You are a Pascal teacher (a very good programmer using assembly language (i.e., machine language) of your local machine). You are given only the following programmes:
+\ie{
+    \item A compiler written in P-code: translate a program in Pascal to one in P-code (P-code is very close to your local machine language).
+    \item A P-code interpreter written in Pascal: able to interpret any program written in P-code.
+}
+
+a) (10) What will you do (with minimal effort) to run the Pascal programs your students submit on your local machine?
+
+b) (5) If you are given a compiler written in Pascal which translate a program in Pascal to a program in P-code, how can you produce a compiler in machine language that compiles a program in Pascal to a program in machine language? 
+%\item What are the sources the programming language designers draw their ideas from to develop a new programming language?
+
+  \item (30) Use regular expression (in the form of production rules) to specify the syntax
+  \ee{
+    \item natural numbers.
+    \item all strings over alphabet \set{\pg{a, b, A, B}} that starts with capital letters.
+    % \item html tags ...
+
+    \item {\em Numeric constants} in a language $\mathcal{X}$. A {\em numeric constant} is an {\em octal, decimal, or hexadecimal integer}. An {\em octal integer} begins with \pg{0}, and may contain only the digits from \pg{0} to \pg{7}. A {\em hexadecimal integer} begins with \pg{0x} or \pg{0X}, and may contain the digits from \pg{0} to \pg{9} and letters from \pg{a}/\pg{A} to \pg{f}/\pg{F}. {\em Decimal integers} are those we normally use in our daily life.
+  }
+  \item (15) Use English to describe what strings are represented by the regular expression (in classical form)$(\epsilon | a | b)^\kleene$?
+
+  \item (15) Given an input \pg{(x+y5)*5 /* This is a comment */ 2x}, what are the tokens recognized by the DFA in Page 12 of the slides (for regular expressions)?
+}
+\end{document}
